@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a href="#" onclick="reload()" class="navbar-brand company-logo">
+                NewsWave
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item hover-link" id="allnews" onclick="onNavItemClick('allnews')">
+                        <a class="nav-link">Top News</a>
+                    </li>
+                    <li class="nav-item hover-link" id="health" onclick="onNavItemClick('health')">
+                        <a class="nav-link">Health</a>
+                    </li>
+                    <li class="nav-item hover-link" id="sports" onclick="onNavItemClick('sports')">
+                        <a class="nav-link">Sports</a>
+                    </li>
+                    <li class="nav-item hover-link" id="politics" onclick="onNavItemClick('politics')">
+                        <a class="nav-link">Politics</a>
+                    </li>
+                    <li class="nav-item hover-link" id="entertainment" onclick="onNavItemClick('entertainment')">
+                        <a class="nav-link">Entertainment</a>
+                    </li>
+                    <li class="nav-item hover-link" id="technology" onclick="onNavItemClick('technology')">
+                        <a class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item hover-link" id="business" onclick="onNavItemClick('business')">
+                        <a class="nav-link">Business</a>
+                    </li>
+                    <li class="nav-item hover-link" id="science" onclick="onNavItemClick('science')">
+                        <a class="nav-link">Science</a>
+                    </li>
+                    <li class="nav-item hover-link" id="tourism" onclick="onNavItemClick('tourism')">
+                        <a class="nav-link">Tourism</a>
+                    </li>
+                   
+                    <li class="nav-item hover-link" id="food" onclick="onNavItemClick('food')">
+                        <a class="nav-link">Food</a>
+                    </li>
+                    <li class="nav-item hover-link">
+                        <a class="nav-link" href="#" id="theme-toggle" onclick="toggleTheme()"><img src="dark.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 pt-4">
+        <div class="row" id="cards-container">
+            <!-- News cards will be inserted here dynamically -->
+        </div>
+        <div id="loading" class="text-center my-4" style="display: none;">
+            <span>Loading...</span>
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content d-flex flex-column">
+                    <h5 id="news-title" class="flex-grow-1">This is the Title</h5>
+                    <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                    <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
